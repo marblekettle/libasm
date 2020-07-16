@@ -6,7 +6,7 @@
 /*   By: bmans <bmans@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/14 10:48:19 by bmans         #+#    #+#                 */
-/*   Updated: 2020/07/16 11:25:30 by bmans         ########   odam.nl         */
+/*   Updated: 2020/07/16 14:38:21 by bmans         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	strcpy(ptr + 1, "");
 	printf("%s %s\n", dest, ptr);
 	printf("%i %i\n", ft_strcmp("apple", "apple"), strcmp("apple", "apple"));
-	printf("%i %i\n", ft_strcmp("apple", "banana"), strcmp("apple", "banana"));
+	printf("%i %i\n", ft_strcmp("banana", "apple"), strcmp("banana", "apple"));
 	printf("%i %i\n", ft_strcmp("apple", "applesauce"), strcmp("apple", "applesauce"));
 	printf("%i %i\n", ft_strcmp("12345", "12367"), strcmp("12345", "12367"));
 	cread = ft_read(0, buf, BUFFER_SIZE);
