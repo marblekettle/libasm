@@ -13,6 +13,8 @@ loop:
 	jl	minus
 	cmp	rdx, 0
 	je	equal
+	inc	rcx
+	jmp	loop
 
 equal:
 	mov rax, 0
