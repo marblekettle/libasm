@@ -4,11 +4,12 @@ section .text
 _ft_strcmp:
 	mov rax, 0
     mov rcx, 0
+	mov rdx, 0
     jmp loop
 
 loop:
-	mov rdx, [rdi + rcx]
-	cmp rdx, [rsi + rcx]
+	mov dh, byte [rdi + rcx]
+	cmp dh, byte [rsi + rcx]
 	jg	plus
 	jl	minus
 	cmp	rdx, 0
@@ -27,8 +28,3 @@ plus:
 minus:
 	mov rax, -1
 	ret
-
-
-4 and 0
-100 and 000 = 000
-100 and 001 = 000
