@@ -10,7 +10,7 @@ _ft_read:
     ret
 
 error:
-    push    rcx				;	reallign stack by 8 bytes
+    push    rcx				;	save rcx
     mov     rcx, rax
     call    ___error		;	sets rax to pointer
     mov     [rax], rcx
