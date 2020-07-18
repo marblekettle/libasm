@@ -10,11 +10,11 @@ _ft_read:
     ret
 
 error:
-    push    r8
-    mov     r8, rax
+    push    rcx
+    mov     rcx, rax
     call    ___error
-    mov     [rax], r8
+    mov     [rax], rcx
     mov     rax, -1
-    pop     r8
+    pop     rcx
     ret
 
