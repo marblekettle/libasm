@@ -6,7 +6,7 @@
 /*   By: bmans <bmans@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/14 10:48:19 by bmans         #+#    #+#                 */
-/*   Updated: 2020/07/17 16:59:00 by bmans         ########   odam.nl         */
+/*   Updated: 2020/07/18 13:38:50 by bmans         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <errno.h>
+
+extern int errno;
 
 int	main(int ac, char **av)
 {
@@ -38,9 +41,11 @@ int	main(int ac, char **av)
 	printf("%i %i\n", ft_strcmp("banana", "apple"), strcmp("banana", "apple"));
 	printf("%i %i\n", ft_strcmp("apple", "applesauce"), strcmp("apple", "applesauce"));
 	printf("%i %i\n", ft_strcmp("12345", "12367"), strcmp("12345", "12367")); */
-	cread = read(0, NULL, BUFFER_SIZE);
-	printf("%i\n", cread);
-	write(1, NULL, cread);
+	cread = ft_read(0, buf, BUFFER_SIZE);
+	printf("%i %i\n", cread, errno);
+	if (errno)
+		perror("");
+	ft_write(1, buf, cread);
 	//cread = read(0, buf, BUFFER_SIZE);
 	//write(1, buf, cread);
 /*	cread = ft_read(-1, buf, BUFFER_SIZE);
