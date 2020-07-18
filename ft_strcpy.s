@@ -3,15 +3,14 @@ section .text
 
 _ft_strcpy:
     mov rax, rdi
-    mov rcx, 0
-    jmp loop
 
 loop:
-    mov rdx, [rsi + rcx]
+    mov rdx, [rsi + rcx]	;	*(dst + i) = *(src + i);
     mov [rax + rcx], rdx
-    inc rcx
-    cmp byte [rax + rcx], 0
+    inc rcx					;	i++;
+    cmp byte [rsi + rcx], 0	;	if (*(src + i) == '\0')
     je  done
+	jmp	loop
 
 done:
-    ret
+    ret						;	return (dst);
