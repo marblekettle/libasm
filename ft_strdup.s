@@ -7,10 +7,10 @@ section .text
 
 _ft_strdup:
 	push	rdi			;	(store str, align stack)
-	call	ft_strlen
+	call	_ft_strlen
 	mov		rdi, rax
-	call	malloc		;	str_out = malloc(ft_strlen);
+	call	_malloc		;	str_out = malloc(ft_strlen);
 	pop		rsi			;	(clear stack)
 	mov		rdi, rax
-	call	ft_strcpy	;	ft_strcpy(str_out, str);
+	call	_ft_strcpy	;	ft_strcpy(str_out, str);
 	ret
