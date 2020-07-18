@@ -3,13 +3,14 @@ section .text
 
 _ft_strcpy:
     mov rax, rdi
+    mov rcx, 0
 
 loop:
     mov rdx, [rsi + rcx]	;	*(dst + i) = *(src + i);
     mov [rax + rcx], rdx
-    inc rcx					;	i++;
     cmp byte [rsi + rcx], 0	;	if (*(src + i) == '\0')
     je  done
+    inc rcx					;	i++;
 	jmp	loop
 
 done:

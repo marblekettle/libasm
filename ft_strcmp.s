@@ -2,6 +2,8 @@ section .text
     global _ft_strcmp
 
 _ft_strcmp:
+	mov	rcx, 0
+	mov	rdx, 0
 
 loop:
 	mov dh, byte [rdi + rcx]
