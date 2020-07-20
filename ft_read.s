@@ -10,10 +10,8 @@ _ft_read:
     ret
 
 error:
-    push    rcx				;	save rcx
-    mov     rcx, rax
+	push    rax				;	save rax
     call    ___error		;	sets rax to pointer
-    mov     [rax], rcx
+	pop     qword [rax]		;	clear stack
     mov     rax, -1
-    pop     rcx				;	clear stack
     ret

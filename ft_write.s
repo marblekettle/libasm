@@ -10,10 +10,8 @@ _ft_write:
     ret
 
 error:
-    push    rcx				;	save rcx
-    mov     rcx, rax
+    push    rax				;	save rax
     call    ___error		;	sets rax to pointer
-    mov     [rax], rcx
-    mov     rax, -1
-    pop     rcx				;	clear stack
+    pop     qword [rax]
+	mov     rax, -1
     ret
