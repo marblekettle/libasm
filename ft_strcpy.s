@@ -9,8 +9,8 @@ _ft_strcpy:
     mov     rdx, 0
 
 loop:
-    mov 	dh, byte [rsi + rcx]
-    mov 	byte [rax + rcx], dh
+    mov 	dl, byte [rsi + rcx]
+    mov 	byte [rax + rcx], dl
     cmp 	byte [rsi + rcx], 0
     je  	done
     inc 	rcx

@@ -6,7 +6,7 @@
 #    By: bmans <bmans@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/14 14:00:33 by bmans         #+#    #+#                  #
-#    Updated: 2020/07/20 13:53:23 by bmans         ########   odam.nl          #
+#    Updated: 2020/07/21 14:40:01 by bmans         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = ft_write.s ft_read.s ft_strlen.s ft_strcpy.s ft_strcmp.s ft_strdup.s
 OBJS = $(SRCS:.s=.o)
 NASM_FLAGS = -fmacho64
 CC = gcc
-CC_FLAGS = -g -DBUFFER_SIZE=100
+CC_FLAGS = -Wall -Werror -Wextra
 NASM_PATH = ./nasm/nasm
 
 all: $(NAME)
