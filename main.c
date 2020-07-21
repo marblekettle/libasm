@@ -6,7 +6,7 @@
 /*   By: bmans <bmans@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/20 10:06:18 by bmans         #+#    #+#                 */
-/*   Updated: 2020/07/21 14:41:25 by bmans         ########   odam.nl         */
+/*   Updated: 2020/07/21 15:00:29 by bmans         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ static void	test_strlen(const char* str)
 		else if (newstr[i] == '@')
 			newstr[i] = '\0';
 	}
-	printf("\033[1;37mTesting ft_strlen: length of %s\n", str);
+	printf("\033[1;37mTesting ft_strlen: length of \"%s\"\n", str);
 	len[0] = ft_strlen(newstr);
 	len[1] = strlen(newstr);
 	printf("ft_strlen: %i\n   strlen: %i\n", len[0], len[1]);
@@ -160,7 +160,7 @@ static void	test_strcpy(const char *dst, const char* src, int off)
 		else if (bufsrc[i] == '@')
 			bufsrc[i] = '\0';
 	}
-	printf("\033[1;37mTesting ft_strcpy: %s into %s + %i\n", src, dst, off);
+	printf("\033[1;37mTesting ft_strcpy: \"%s\" into \"%s\" + %i\n", src, dst, off);
 	ft_strcpy(buf1 + off, bufsrc);
 	strcpy(buf2 + off, bufsrc);
 	for (int i = 0; i < len; i++)
@@ -186,6 +186,7 @@ static void	test_strcpy(const char *dst, const char* src, int off)
 	free(buf1);
 	free(buf2);
 	free(bufsrc);
+	printf("\n");
 }
 
 static void	test_strcmp(const char *s1, const char *s2)
@@ -210,7 +211,7 @@ static void	test_strcmp(const char *s1, const char *s2)
 		else if (buf2[i] == '@')
 			buf2[i] = '\0';
 	}
-	printf("\033[1;37mTesting ft_strcmp: %s and %s\n", s1, s2);
+	printf("\033[1;37mTesting ft_strcmp: \"%s\" and \"%s\"\n", s1, s2);
 	out[0] = ft_strcmp(buf1, buf2);
 	out[1] = strcmp(buf1, buf2);
 	printf("ft_strcmp: %i\n   strcmp: %i\n", out[0], out[1]);
@@ -220,6 +221,7 @@ static void	test_strcmp(const char *s1, const char *s2)
 		printf("\033[1;31mNO MATCH\n");
 	free(buf1);
 	free(buf2);
+	printf("\n");
 }
 
 static void	test_strdup(const char *str)
@@ -236,7 +238,7 @@ static void	test_strdup(const char *str)
 		else if (newstr[i] == '@')
 			newstr[i] = '\0';
 	}
-	printf("\033[1;37mTesting ft_strdup: Copying %s\n", str);
+	printf("\033[1;37mTesting ft_strdup: Copying \"%s\"\n", str);
 	buf1 = ft_strdup(newstr);
 	buf2 = strdup(newstr);
 	for (int i = 0; i < (int)strlen(buf1); i++)
@@ -257,6 +259,7 @@ static void	test_strdup(const char *str)
 	free(newstr);
 	free(buf1);
 	free(buf2);
+	printf("\n");
 }
 
 int			main(int ac, char **av)
