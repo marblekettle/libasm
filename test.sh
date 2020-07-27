@@ -33,5 +33,19 @@ touch results.txt
 ./asm_test ft_strdup "@12345" >> results.txt
 ./asm_test ft_strdup "@" >> results.txt
 ./asm_test ft_strdup "123456789012345678901234567890123456789012" >> results.txt
+./asm_test ft_read "Makefile" 10 >> results.txt
+./asm_test ft_read "Makefile" 42 >> results.txt
+./asm_test ft_read "Makefile" 0 >> results.txt
+./asm_test ft_read "Makefile" -1 >> results.txt
+./asm_test ft_read "README.md" 42 >> results.txt
+./asm_test ft_read "ERROR" 5 >> results.txt
+./asm_test ft_read "ERROR" 0 >> results.txt
+./asm_test ft_read "ERROR" -1 >> results.txt
+./asm_test ft_write "123456789012345" 10 >> results.txt
+./asm_test ft_write "1234567890" 42 >> results.txt
+./asm_test ft_write "123" 0 >> results.txt
+./asm_test ft_write "123" -1 >> results.txt
+./asm_test ft_write "1@2@3@" 6 >> results.txt
+./asm_test ft_write "123456789012345678901234567890123456789012" 42 >> results.txt
 make fclean
 cat results.txt
