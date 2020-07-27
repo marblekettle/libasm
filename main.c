@@ -63,7 +63,7 @@ static void	test_write(const char *str, int nbytes)
 	printf("\n");
 	fd[0] = open("tmp1.txt", O_RDWR);
 	fd[1] = open("tmp2.txt", O_RDWR);
-	write(fd[0], newstr, nbytes);
+	ft_write(fd[0], newstr, nbytes);
 	err[0] = errno;
 	write(fd[1], newstr, nbytes);
 	err[1] = errno;
